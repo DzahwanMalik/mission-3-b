@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHILL - Movie Theater</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../styles/style.css" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awasome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="relative min-h-screen bg-[url(https://images.unsplash.com/photo-1595769816263-9b910be24d5f?q=80&w=1179&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-center bg-cover"
+  >
+    <!-- Container -->
+    <div
+      class="p-5 w-[90%] md:max-w-[529px] absolute top-1/2 left-1/2 -translate-1/2 bg-[var(--bg-form)] text-white rounded-xl shadow-lg text-sm"
+    >
+      <div class="flex justify-center mb-8">
+        <img src="../assets/logo/chill.svg" alt="">
+      </div>
+      <div class="flex flex-col gap-1">
+        <h1 class="font-bold text-xl text-center">Masuk</h1>
+        <p class="font-medium mb-5 text-center">Selamat Datang Kembali</p>
+      </div>
+      <form action="" class="flex flex-col gap-5">
+        <div class="flex flex-col">
+          <label for="username">Username</label>
+          <div class="relative">
+            <input
+              type="text"
+              name=""
+              id="username"
+              placeholder="Masukkan username"
+              class="text-xs border-1 border-[rgba(231, 227, 252, 0.23)] py-2 px-3 rounded-xl w-full"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <label for="">Kata Sandi</label>
+          <div class="relative mb-3">
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Masukkan kata sandi"
+              class="text-xs border-1 border-[rgba(231, 227, 252, 0.23)] py-2 px-3 rounded-xl w-full"
+            />
+            <span
+              class="absolute inset-y-0 right-2 grid w-8 place-content-center cursor-pointer"
+              ><i class="fa-solid fa-eye-slash"></i
+            ></span>
+          </div>
+          <div class="flex justify-between text-xs">
+            <p class="font-light">
+              Belum punya akun? <a href="./register.html" class="font-bold">Daftar</a>
+            </p>
+            <a href="">Lupa Kata Sandi?</a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3 text-center">
+          <button
+            class="bg-[#3D4142] outline-2 outline-[#E7E3FC3B] py-2 px-3 rounded-xl cursor-pointer"
+          >
+            Masuk
+          </button>
+          <p>Atau</p>
+          <button
+            class="outline-2 outline-[#E7E3FC3B] py-2 px-3 rounded-xl flex gap-3 justify-center cursor-pointer"
+          >
+            <img
+              src="../assets/logo/google.png"
+              alt=""
+              width="18px"
+              height="18px"
+            />Masuk dengan Google
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

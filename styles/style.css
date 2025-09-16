@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+:root {
+    --bg-form: rgba(24, 26, 28, 0.84);
+}
+
+* {
+    font-family: Lato;
+}
