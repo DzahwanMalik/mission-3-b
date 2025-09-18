@@ -2,6 +2,11 @@
 
 :root {
     --bg-form: rgba(24, 26, 28, 0.84);
+    --bg-body-primary: #181A1C; 
+    --bg-primary: #0F1E93;
+    --bg-secondary: #424242;
+    --text-primary: #3254FF;
+    --text-secondary: #C1C2C4;
 }
 
 * {

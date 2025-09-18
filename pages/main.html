@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda - CHILL</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../styles/style.css" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awasome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body class="bg-[var(--bg-body-primary)] min-h-screen">
+    <header id="header">
+      <!-- Navbar -->
+      <nav class="relative text-white text-xs py-1.5 px-5 flex items-center">
+        <ul class="flex gap-3 items-center w-full">
+          <li>
+            <a href=""
+              ><svg
+                width="20"
+                height="44"
+                viewBox="0 0 20 44"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.3668 14.635L14.0919 15.22L16.3752 17.875L18.0168 17.575L17.3668 14.635ZM11.6419 15.655L10.0002 15.9475L12.2919 18.595L13.9252 18.3025L11.6419 15.655ZM7.55852 16.375L5.91685 16.6825L8.20852 19.33L9.84185 19.0375L7.55852 16.375ZM3.46685 17.125L2.65019 17.2675C2.21717 17.3454 1.83619 17.5747 1.59089 17.9052C1.34559 18.2356 1.25602 18.6402 1.34186 19.03L1.66686 20.5L5.75019 19.7725L3.46685 17.125ZM1.66686 20.5V28C1.66686 28.8325 2.41685 29.5 3.33352 29.5H16.6668C17.5918 29.5 18.3335 28.8325 18.3335 28V20.5H1.66686Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </li>
+          <li><a href="">Series</a></li>
+          <li><a href="">Film</a></li>
+          <li><a href="">Daftar Saya</a></li>
+        </ul>
+        <div class="flex gap-2 items-center" id="profile">
+          <span class="size-5 rounded-full bg-white"> </span>
+          <span class="size-4">
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+
+        <!-- Dropdown -->
+        <ul
+          class="absolute -z-10 right-5 top-10 bg-[var(--bg-body-primary)] shadow-lg p-1 -translate-y-5 opacity-0 transition-all duration-300 ease-in-out"
+          id="dropdown"
+        >
+          <li>
+            <a
+              href=""
+              class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)]"
+              ><i class="fa-solid fa-user"></i> <span>Profil</span></a
+            >
+          </li>
+          <li>
+            <a
+              href=""
+              class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)]"
+              ><i class="fa-solid fa-star"></i><span>Ubah Premium</span></a
+            >
+          </li>
+          <li>
+            <a
+              href=""
+              class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)]"
+              ><i class="fa-solid fa-arrow-right-from-bracket"></i
+              ><span>Keluar</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Hero banner -->
+      <section
+        class="relative min-h-80 bg-cover bg-center flex items-end overflow-hidden"
+        id="hero"
+      >
+        <!-- Overlay -->
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/90 to-black/40"
+        ></div>
+
+        <!-- Content -->
+        <div class="relative z-10 p-8 text-white" id="hero-content"></div>
+      </section>
+    </header>
+
+    <main id="main" class="grid grid-cols-1 justify-items-center text-white">
+      <section class="max-w-screen py-5 flex flex-col gap-5" data-aos="fade-up">
+        <h1 class="font-bold px-5 text-xl">Melanjutkan Tonton Film</h1>
+        <div class="swiper swiper-1 w-full py-10">
+          <div class="swiper-wrapper" id="CW-slider">
+            <!-- Slide dari JS -->
+          </div>
+        </div>
+      </section>
+      <section class="max-w-screen py-5 px-5 flex flex-col gap-5" data-aos="fade-up">
+        <h1 class="font-bold text-xl">Top Rating Film dan Series Hari Ini</h1>
+        <div class="swiper swiper-2 w-full py-10">
+          <div class="swiper-wrapper" id="TR-slider">
+            <!-- Slide dari JS -->
+          </div>
+        </div>
+      </section>
+      <section class="max-w-screen py-5 px-5 flex flex-col gap-5" data-aos="fade-up">
+        <h1 class="font-bold text-xl">Film Trending</h1>
+        <div class="swiper swiper-3 w-full py-10">
+          <div class="swiper-wrapper" id="TF-slider">
+            <!-- Slide dari JS -->
+          </div>
+        </div>
+      </section>
+      <section class="max-w-screen py-5 px-5 flex flex-col gap-5" data-aos="fade-up">
+        <h1 class="font-bold text-xl">Rilis Baru</h1>
+        <div class="swiper swiper-4 w-full py-10">
+          <div class="swiper-wrapper" id="NR-slider">
+            <!-- Slide dari JS -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>
