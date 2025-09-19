@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CHILL - Movie Theater</title>
+    <title>Beranda - CHILL</title>
 
     <!-- Style -->
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
 
     <!-- Tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -49,8 +49,8 @@
           <li>
             <a href=""
               ><svg
-                width="20"
-                height="44"
+                width="24"
+                height="48"
                 viewBox="0 0 20 44"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,11 +67,39 @@
           <li><a href="">Daftar Saya</a></li>
         </ul>
         <div class="flex gap-2 items-center" id="profile">
-          <ul class="flex gap-3 items-center">
-            <li><a href="pages/login.html" class="inline-block bg-[var(--bg-primary)] px-3 py-2 rounded-sm">Login</a></li>
-            <li><a href="pages/register.html" class="inline-block bg-[var(--bg-secondary)] px-3 py-2 rounded-sm">Register</a></li>
-          </ul>
+          <span class="size-7 rounded-full bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBB8-vI6Zaos_J9857nFdUFMWkcQQn769oBw&s)] bg-cover bg-center"> </span>
+          <span class="size-4">
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
         </div>
+
+        <!-- Dropdown -->
+        <ul
+          class="absolute -z-10 right-5 top-10 bg-[var(--bg-body-primary)] shadow-lg p-1 -translate-y-5 opacity-0 transition-all duration-300 ease-in-out rounded-sm"
+          id="dropdown"
+        >
+          <li>
+            <a
+              href="pages/login.html"
+              class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)]"
+              ><i class="fa-solid fa-user"></i> <span>Profil</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="pages/register.html"
+              class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)]"
+              ><i class="fa-solid fa-star"></i> <span>Ubah Premium</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="pages/register.html"
+              class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)]"
+              ><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Keluar</span></a
+            >
+          </li>
+        </ul>
       </nav>
 
       <!-- Hero banner -->
@@ -138,6 +166,6 @@
       </section>
     </main>
 
-    <script type="module" src="main.js"></script>
+    <script type="module" src="../main.js"></script>
   </body>
 </html>

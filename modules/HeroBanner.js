@@ -6,12 +6,21 @@ function renderHeroBanner() {
       const movie = data[Math.floor(Math.random() * data.length)];
 
       // Ambil Element Hero
-      const hero = document.getElementById("hero");
+      const container = document.getElementById("movie-trailer");
       const heroContent = document.getElementById("hero-content");
 
       function render(movie) {
-        // Set Background Image
-        hero.style.backgroundImage = `url(${movie.img})`;
+        container.innerHTML = `
+          <video
+            src="${movie.link}"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="absolute z-10 top-0 left-0 w-full h-full object-cover"
+            id='trailer'
+          ></video>
+      `;
 
         // Set Isi Content
         heroContent.innerHTML = `
@@ -24,24 +33,52 @@ function renderHeroBanner() {
             <button class="py-1 px-3 font-medium rounded-4xl bg-[var(--bg-primary)]">Mulai</button>
             <button class="py-1 px-3 font-medium rounded-4xl bg-[var(--bg-secondary)] flex gap-1 items-center"><i class="fa-solid fa-circle-info"></i>Selengkapnya</button>
           </span>
-          <span class="relative size-6 outline-2 outline-[var(--text-secondary)] rounded-full">
+          <span class="relative size-6 outline-2 outline-[var(--text-secondary)] rounded-full cursor-pointer" id="volume-button">
             <span class='absolute top-1/2 left-1/2 -translate-1/2 text-xs'>
-              <i class="fa-solid fa-volume-high"></i>
+              <i class="fa-solid fa-volume-xmark" id='volume-icon'></i>
             </span>
           </span>
         </div>
       `;
 
+      // Set Volume Trailer
+      const volumeBtn = document.getElementById('volume-button');
+      const volumeIcon = document.getElementById('volume-icon');
+      const trailer = document.getElementById('trailer');
+      let sound = false;
+
+      volumeBtn.addEventListener('click', () => {
+        if(!sound) {
+          volumeIcon.classList.remove('fa-volume-xmark');
+          volumeIcon.classList.add('fa-volume-high');
+
+          trailer.muted = false;
+
+          sound = true;
+        } else {  
+          volumeIcon.classList.remove('fa-volume-high');
+          volumeIcon.classList.add('fa-volume-xmark');
+
+          trailer.muted = true;
+
+          sound = false;
+        }
+      });
+
         // Refresh AOS
         AOS.refreshHard();
       }
 
-      render(movie);
+      function cycleBanner() {
+        const movieRandom = data[Math.floor(Math.random() * data.length)];
+        render(movieRandom);
 
-      setInterval(() => {
-        const repeatRandom = data[Math.floor(Math.random() * data.length)];
-        render(repeatRandom);
-      }, 10000);
+        // Pakai Durasi Dari JSON
+        setTimeout(cycleBanner, movieRandom.trailerDuration * 1000);
+      }
+
+      // Start Pertama Kali
+      cycleBanner();
     })
     .catch((error) => {
       throw error;

@@ -4,7 +4,19 @@ function swiperCW() {
     .then((data) => {
       const slider = document.getElementById("CW-slider");
 
-     data.forEach((movie) => {
+      // Acak Array
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+
+        return array;
+      }
+
+      const randomMovies = shuffleArray(data);
+      
+      randomMovies.forEach((movie) => {
         const slide = document.createElement("div");
         slide.className = "swiper-slide max-w-[90%]"; // max width biar film utama lebih fokus
 
@@ -26,11 +38,14 @@ function swiperCW() {
       });
 
       // Inisialisasi Swiper
-      new Swiper('.swiper-1', {
+      new Swiper(".swiper-1", {
         slidesPerView: "auto",
         centeredSlides: true,
         spaceBetween: 15,
         loop: true,
+        autoplay: {
+          delay: 5000,
+        },
       });
     })
     .catch((err) => console.error("Gagal load film:", err));

@@ -4,7 +4,19 @@ function swiperTF() {
     .then((data) => {
       const slider = document.getElementById("TF-slider");
 
-      data.forEach((movie) => {
+      // Acak Array
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+
+        return array;
+      }
+
+      const randomMovies = shuffleArray(data);
+
+      randomMovies.forEach((movie) => {
         const slide = document.createElement("div");
         slide.className = "swiper-slide"; // max width biar film utama lebih fokus
 
@@ -30,6 +42,9 @@ function swiperTF() {
           slidesPerView: 3,
           spaceBetween: 15,
           loop: true,
+          autoplay: {
+            delay: 5000,
+          },
         });
       });
     })
