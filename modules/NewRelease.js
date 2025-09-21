@@ -21,24 +21,57 @@ function swiperNR() {
         slide.className = "swiper-slide"; // max width biar film utama lebih fokus
 
         slide.innerHTML = `
-        <div class="relative rounded-xl overflow-hidden shadow-md">
+        <div class="relative rounded-xl h-56 lg:h-96 overflow-hidden shadow-md bg-[var(--bg-secondary)] animate-pulse">
           <img src="${movie.img || "https://via.placeholder.com/600x340"}" 
                alt="${movie.title}" 
-               class="w-full min-h-56 max-h-96 object-cover">
+               class="w-full h-full object-cover blur-2xl"
+               loading="lazy">
         </div>
       `;
 
         slider.appendChild(slide);
 
-        // Inisialisasi Swiper
-        new Swiper(".swiper-4", {
-          slidesPerView: 3,
-          spaceBetween: 15,
-          loop: true,
-          autoplay: {
-            delay: 5000,
-          },
+        // Hapus Overlay Img Saat Ter-Load
+        const img = slide.querySelector("img");
+        img.addEventListener("load", () => {
+          const overlay = img.parentElement;
+          overlay.classList.remove("animate-pulse");
+          overlay.classList.remove("bg-[var(--bg-secondary)]");
+          img.classList.remove("blur-2xl");
         });
+      });
+
+      // Inisialisasi Swiper
+      new Swiper(".swiper-4", {
+        slidesPerView: 3,
+        spaceBetween: 15,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+        },
+        // breakpoint responsive
+        breakpoints: {
+          640: {
+            // >= 640px (sm)
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          768: {
+            // >= 768px (md)
+            slidesPerView: 4,
+            spaceBetween: 16,
+          },
+          1024: {
+            // >= 1024px (lg)
+            slidesPerView: 5,
+            spaceBetween: 18,
+          },
+          1280: {
+            // >= 1280px (xl)
+            slidesPerView: 6,
+            spaceBetween: 20,
+          },
+        },
       });
     })
     .catch((err) => console.error("Gagal load film:", err));

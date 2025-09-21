@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Londrina+Solid:wght@100;300;400;900"
       rel="stylesheet"
     />
 
@@ -41,75 +41,97 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
-  <body class="bg-[var(--bg-body-primary)] min-h-screen">
+  <body
+    class="bg-[var(--bg-body-primary)] min-h-screen overflow-x-hidden font-[Lato]"
+  >
     <header id="header">
       <!-- Navbar -->
-      <nav class="fixed z-30 top-0 w-full text-white text-xs py-1.5 px-5 flex items-center bg-transparent duration-300 ease-in-out" id="navbar">
-        <ul class="flex gap-3 items-center w-full">
+      <nav
+        class="fixed z-30 top-0 w-full text-white font-bold text-xs py-3 px-5 flex items-center bg-transparent duration-300 ease-in-out shadow-none lg:px-40 lg:py-7 lg:text-sm"
+        id="navbar"
+      >
+        <ul class="flex gap-2 items-center w-full h-full lg:gap-15">
           <li>
-            <a href=""
+            <a href="" class="flex items-center gap-3"
               ><svg
-                width="24"
-                height="48"
-                viewBox="0 0 20 44"
+                width="20"
+                viewBox="0 0 50 45"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                class="lg:w-10"
               >
                 <path
-                  d="M17.3668 14.635L14.0919 15.22L16.3752 17.875L18.0168 17.575L17.3668 14.635ZM11.6419 15.655L10.0002 15.9475L12.2919 18.595L13.9252 18.3025L11.6419 15.655ZM7.55852 16.375L5.91685 16.6825L8.20852 19.33L9.84185 19.0375L7.55852 16.375ZM3.46685 17.125L2.65019 17.2675C2.21717 17.3454 1.83619 17.5747 1.59089 17.9052C1.34559 18.2356 1.25602 18.6402 1.34186 19.03L1.66686 20.5L5.75019 19.7725L3.46685 17.125ZM1.66686 20.5V28C1.66686 28.8325 2.41685 29.5 3.33352 29.5H16.6668C17.5918 29.5 18.3335 28.8325 18.3335 28V20.5H1.66686Z"
+                  d="M43.4169 4.49658L35.2294 5.92658L40.9377 12.4166L45.0419 11.6832L43.4169 4.49658ZM29.1044 6.98992L25.0002 7.70492L30.7294 14.1766L34.8127 13.4616L29.1044 6.98992ZM18.8961 8.74992L14.7919 9.50158L20.5211 15.9732L24.6044 15.2582L18.8961 8.74992ZM8.66689 10.5832L6.62523 10.9316C5.54269 11.1219 4.59023 11.6825 3.97698 12.4903C3.36373 13.2981 3.13981 14.287 3.35439 15.2399L4.16689 18.8332L14.3752 17.0549L8.66689 10.5832ZM4.16689 18.8332V37.1666C4.16689 39.2016 6.04189 40.8333 8.33356 40.8333H41.6669C43.9794 40.8333 45.8336 39.2016 45.8336 37.1666V18.8332H4.16689Z"
                   fill="white"
                 />
               </svg>
+              <span
+                class="font-bold text-xl hidden font-[Londrina_Solid] lg:block lg:text-3xl"
+                >CHILL</span
+              >
             </a>
           </li>
           <li><a href="">Series</a></li>
           <li><a href="">Film</a></li>
           <li><a href="">Daftar Saya</a></li>
         </ul>
-        <div class="flex gap-2 items-center" id="profile">
-          <span class="size-7 rounded-full bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBB8-vI6Zaos_J9857nFdUFMWkcQQn769oBw&s)] bg-cover bg-center"> </span>
+        <div
+          class="relative flex gap-2 items-center px-3 py-2 rounded-md duration-300 ease-in-out cursor-pointer hover:bg-[var(--bg-body-secondary)]"
+          id="profile"
+        >
+          <span
+            class="size-7 rounded-full bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBB8-vI6Zaos_J9857nFdUFMWkcQQn769oBw&s)] bg-cover bg-center"
+          >
+          </span>
           <span class="size-4">
             <i class="fa-solid fa-angle-down"></i>
           </span>
-        </div>
 
-        <!-- Dropdown -->
-        <ul
-          class="absolute -z-10 right-5 top-10 bg-[var(--bg-body-primary)] shadow-lg p-1 -translate-y-5 opacity-0 transition-all duration-300 ease-in-out rounded-sm"
-          id="dropdown"
-        >
-          <li>
-            <a
-              href="pages/login.html"
-              class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)]"
-              ><i class="fa-solid fa-user"></i> <span>Profil</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="pages/register.html"
-              class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)]"
-              ><i class="fa-solid fa-star"></i> <span>Ubah Premium</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="pages/register.html"
-              class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)]"
-              ><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Keluar</span></a
-            >
-          </li>
-        </ul>
+          <!-- Dropdown -->
+          <ul
+            class="absolute -z-10 right-0 top-full bg-[var(--bg-body-primary)] shadow-lg p-1 -translate-y-5 opacity-0 transition-all duration-300 ease-in-out rounded-sm"
+            id="dropdown"
+          >
+            <li>
+              <a
+                href="pages/login.html"
+                class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)] whitespace-nowrap"
+                ><i class="fa-solid fa-user"></i> <span>Profil</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="pages/register.html"
+                class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)] whitespace-nowrap"
+                ><i class="fa-solid fa-star"></i> <span>Ubah Premium</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="pages/register.html"
+                class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)] whitespace-nowrap"
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Keluar</span></a
+              >
+            </li>
+          </ul>
+        </div>
       </nav>
 
       <!-- Hero banner -->
       <section
-        class="relative min-h-80 bg-cover bg-center flex items-end overflow-hidden"
-        id="hero"
+        class="relative aspect-video min-h-80 w-full max-h-[678px] flex items-end overflow-hidden"
       >
         <!-- Video -->
         <div
-          id="movie-trailer"
+          id="yt-player"
+          class="absolute top-1/2 left-1/2 -translate-1/2 min-w-full h-[120%] inset-0"
+        ></div>
+
+        <!-- Overlay loading -->
+        <div
+          id="yt-overlay"
+          class="absolute inset-0 w-full h-full bg-cover bg-center"
         ></div>
 
         <!-- Overlay -->
@@ -118,13 +140,19 @@
         ></div>
 
         <!-- Content -->
-        <div class="relative z-10 p-8 text-white" id="hero-content"></div>
+        <div
+          class="relative w-full z-10 p-5 lg:px-40 lg:py-10 text-white"
+          id="hero-content"
+        ></div>
       </section>
     </header>
 
     <main id="main" class="grid grid-cols-1 justify-items-center text-white">
-      <section class="max-w-screen py-5 flex flex-col gap-5" data-aos="fade-up">
-        <h1 class="font-bold px-5 text-xl">Melanjutkan Tonton Film</h1>
+      <section
+        class="max-w-screen py-5 flex flex-col gap-5 md:px-5 lg:px-40"
+        data-aos="fade-up"
+      >
+        <h1 class="font-bold px-5 lg:px-0 text-xl">Melanjutkan Tonton Film</h1>
         <div class="swiper swiper-1 w-full py-10">
           <div class="swiper-wrapper" id="CW-slider">
             <!-- Slide dari JS -->
@@ -132,7 +160,7 @@
         </div>
       </section>
       <section
-        class="max-w-screen py-5 px-5 flex flex-col gap-5"
+        class="max-w-screen py-5 px-5 flex flex-col gap-5 lg:px-40"
         data-aos="fade-up"
       >
         <h1 class="font-bold text-xl">Top Rating Film dan Series Hari Ini</h1>
@@ -143,7 +171,7 @@
         </div>
       </section>
       <section
-        class="max-w-screen py-5 px-5 flex flex-col gap-5"
+        class="max-w-screen py-5 px-5 flex flex-col gap-5 lg:px-40"
         data-aos="fade-up"
       >
         <h1 class="font-bold text-xl">Film Trending</h1>
@@ -154,7 +182,7 @@
         </div>
       </section>
       <section
-        class="max-w-screen py-5 px-5 flex flex-col gap-5"
+        class="max-w-screen py-5 px-5 flex flex-col gap-5 lg:px-40"
         data-aos="fade-up"
       >
         <h1 class="font-bold text-xl">Rilis Baru</h1>
@@ -165,6 +193,197 @@
         </div>
       </section>
     </main>
+
+    <footer
+      class="grid gap-5 grid-cols-1 items-center p-5 border-t-2 border-[var(--bg-body-secondary)] text-white lg:grid-cols-4 lg:px-40 lg:py-10"
+    >
+      <div class="flex flex-col">
+        <span class="flex gap-2 items-center">
+          <svg
+            width="50"
+            viewBox="0 0 50 45"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="lg:w-20"
+          >
+            <path
+              d="M43.4169 4.49658L35.2294 5.92658L40.9377 12.4166L45.0419 11.6832L43.4169 4.49658ZM29.1044 6.98992L25.0002 7.70492L30.7294 14.1766L34.8127 13.4616L29.1044 6.98992ZM18.8961 8.74992L14.7919 9.50158L20.5211 15.9732L24.6044 15.2582L18.8961 8.74992ZM8.66689 10.5832L6.62523 10.9316C5.54269 11.1219 4.59023 11.6825 3.97698 12.4903C3.36373 13.2981 3.13981 14.287 3.35439 15.2399L4.16689 18.8332L14.3752 17.0549L8.66689 10.5832ZM4.16689 18.8332V37.1666C4.16689 39.2016 6.04189 40.8333 8.33356 40.8333H41.6669C43.9794 40.8333 45.8336 39.2016 45.8336 37.1666V18.8332H4.16689Z"
+              fill="white"
+            />
+          </svg>
+
+          <span class="font-bold text-4xl font-[Londrina_Solid] lg:text-6xl"
+            >CHILL</span
+          >
+        </span>
+        <span class="text-[var(--text-secondary)]">
+          <small>&copy;2023 Chill All Right Reserved</small>
+        </span>
+      </div>
+      <div class="col-span-2">
+        <span
+          class="flex justify-between items-center lg:flex-col lg:items-start lg:gap-3"
+        >
+          <span class="font-bold">Genre</span>
+          <span class="font-bold lg:hidden"
+            ><i class="fa-solid fa-angle-right"></i
+          ></span>
+          <span
+            class="hidden gap-10 text-[var(--text-secondary)] font-light lg:flex"
+          >
+            <ul>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Aksi</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Anak-anak</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Anime</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Britania</a
+                >
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Drama</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Fantasi Ilmiah & Fantasi</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Kejahatan</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >KDrama</a
+                >
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Komedi</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Petualangan</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Perang</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Romantis</a
+                >
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Sains & Alam</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                  >Thriller</a
+                >
+              </li>
+            </ul>
+          </span>
+        </span>
+      </div>
+      <div class="">
+        <span
+          class="flex justify-between items-center lg:flex-col lg:items-start lg:gap-3"
+        >
+          <span class="font-bold">Bantuan</span>
+          <span class="font-bold lg:hidden"
+            ><i class="fa-solid fa-angle-right"></i
+          ></span>
+          <ul class="font-light text-[var(--text-secondary)] hidden lg:block">
+            <li>
+              <a
+                href=""
+                class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                >Kontak Kami</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                >Privasi</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                class="duration-300 ease-in-out hover:text-[var(--text-primary)]"
+                >Syarat & Ketentuan</a
+              >
+            </li>
+          </ul>
+        </span>
+      </div>
+    </footer>
+
+    <!-- YT API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
 
     <script type="module" src="../main.js"></script>
   </body>

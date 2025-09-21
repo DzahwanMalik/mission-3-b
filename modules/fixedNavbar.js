@@ -2,12 +2,12 @@ function fixedNavbar() {
   const navbar = document.getElementById("navbar");
 
   window.addEventListener("scroll", () => {
-    if(window.scrollY > 0) {
-        navbar.classList.remove('bg-transparent');
-        navbar.classList.add('bg-[var(--bg-body-primary)]');
+    if (window.scrollY > 0) {
+      navbar.classList.replace("bg-transparent", "bg-[var(--bg-body-primary)]");
+      navbar.classList.replace("shadow-none", "shadow");
     } else {
-        navbar.classList.remove('bg-[var(--bg-body-primary)]');
-        navbar.classList.add('bg-transparent');
+      navbar.classList.replace("bg-[var(--bg-body-primary)]", "bg-transparent");
+      navbar.classList.replace("shadow", "shadow-none");
     }
   });
 }

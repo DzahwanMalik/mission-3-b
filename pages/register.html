@@ -42,26 +42,26 @@
         <h1 class="font-bold text-xl text-center">Daftar</h1>
         <p class="font-medium mb-5 text-center">Selamat Datang!</p>
       </div>
-      <form action="" class="flex flex-col gap-5">
-        <div class="flex flex-col">
-          <label for="username">Username</label>
+      <form class="flex flex-col gap-5" id="form-register">
+        <div class="flex flex-col gap-2">
+          <label for="usernameRegister">Username</label>
           <div class="relative">
             <input
               type="text"
               name=""
-              id="username"
+              id="usernameRegister"
               placeholder="Masukkan username"
               class="text-xs border-1 border-[rgba(231, 227, 252, 0.23)] py-2 px-3 rounded-xl w-full"
             />
           </div>
         </div>
-        <div class="flex flex-col">
-          <label for="">Kata Sandi</label>
+        <div class="flex flex-col gap-2">
+          <label for="passwordRegister">Kata Sandi</label>
           <div class="relative">
             <input
               type="text"
               name=""
-              id=""
+              id="passwordRegister"
               placeholder="Masukkan kata sandi"
               class="text-xs border-1 border-[rgba(231, 227, 252, 0.23)] py-2 px-3 rounded-xl w-full"
             />
@@ -71,13 +71,13 @@
             ></span>
           </div>
         </div>
-        <div class="flex flex-col">
-          <label for="">Konfirmasi Kata Sandi</label>
+        <div class="flex flex-col gap-2">
+          <label for="repeatPasswordRegister">Konfirmasi Kata Sandi</label>
           <div class="relative mb-3">
             <input
               type="text"
               name=""
-              id=""
+              id="repeatPasswordRegister"
               placeholder="Masukkan kata sandi"
               class="text-xs border-1 border-[rgba(231, 227, 252, 0.23)] py-2 px-3 rounded-xl w-full"
             />
@@ -94,7 +94,7 @@
         </div>
         <div class="flex flex-col gap-3 text-center">
           <button
-            class="bg-[#3D4142] outline-2 outline-[#E7E3FC3B] py-2 px-3 rounded-xl cursor-pointer"
+            class="bg-[var(--bg-secondary)] outline-2 outline-[#E7E3FC3B] py-2 px-3 rounded-xl cursor-pointer duration-300 ease-in-out hover:bg-[var(--bg-primary)] hover:outline-[var(--bg-primary)]"
           >
             Daftar
           </button>

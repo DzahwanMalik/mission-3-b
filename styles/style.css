@@ -1,14 +1,11 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
-    --bg-form: rgba(24, 26, 28, 0.84);
-    --bg-body-primary: #181A1C; 
-    --bg-primary: #0F1E93;
-    --bg-secondary: #424242;
-    --text-primary: #3254FF;
-    --text-secondary: #C1C2C4;
-}
-
-* {
-    font-family: Lato;
+  --bg-form: rgba(24, 26, 28, 0.84);
+  --bg-body-primary: #212121;
+  --bg-body-secondary: #616161;
+  --bg-primary: #0f1e93;
+  --bg-secondary: #424242;
+  --text-primary: #3254ff;
+  --text-secondary: #c1c2c4;
 }

@@ -1,9 +1,8 @@
 function swiperTF() {
+  const slider = document.getElementById("TF-slider");
   fetch("../data-film/v-film.json")
     .then((res) => res.json())
     .then((data) => {
-      const slider = document.getElementById("TF-slider");
-
       // Acak Array
       function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -21,31 +20,64 @@ function swiperTF() {
         slide.className = "swiper-slide"; // max width biar film utama lebih fokus
 
         slide.innerHTML = `
-        <div class="relative rounded-xl overflow-hidden shadow-md">
+        <div class="relative rounded-xl h-56 lg:h-96 overflow-hidden shadow-md bg-[var(--bg-secondary)] animate-pulse">
           <img src="${movie.img || "https://via.placeholder.com/600x340"}" 
                alt="${movie.title}" 
-               class="w-full min-h-56 max-h-96 object-cover">
+               class="w-full h-full object-cover blur-2xl"
+               loading="lazy">
                <div
             class="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent"
             ></div>
             <div class='absolute top-0 right-2 p-1 bg-red-600 shadow-md text-xs text-center'>
-                <p>Trending</p>
-                <p>Now</p>
+                <p>TOP</p>
+                <p>10</p>
             </div>
         </div>
       `;
 
         slider.appendChild(slide);
 
-        // Inisialisasi Swiper
-        new Swiper(".swiper-3", {
-          slidesPerView: 3,
-          spaceBetween: 15,
-          loop: true,
-          autoplay: {
-            delay: 5000,
-          },
+        // Hapus Overlay Img Saat Ter-Load
+        const img = slide.querySelector("img");
+        img.addEventListener("load", () => {
+          const overlay = img.parentElement;
+          overlay.classList.remove("animate-pulse");
+          overlay.classList.remove("bg-[var(--bg-secondary)]");
+          img.classList.remove("blur-2xl");
         });
+      });
+
+      // Inisialisasi Swiper
+      new Swiper(".swiper-3", {
+        slidesPerView: 3,
+        spaceBetween: 15,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+        },
+        // breakpoint responsive
+        breakpoints: {
+          640: {
+            // >= 640px (sm)
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          768: {
+            // >= 768px (md)
+            slidesPerView: 4,
+            spaceBetween: 16,
+          },
+          1024: {
+            // >= 1024px (lg)
+            slidesPerView: 5,
+            spaceBetween: 18,
+          },
+          1280: {
+            // >= 1280px (xl)
+            slidesPerView: 6,
+            spaceBetween: 20,
+          },
+        },
       });
     })
     .catch((err) => console.error("Gagal load film:", err));
