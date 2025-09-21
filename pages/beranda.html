@@ -76,16 +76,18 @@
           <li><a href="">Daftar Saya</a></li>
         </ul>
         <div
-          class="relative flex gap-2 items-center px-3 py-2 rounded-md duration-300 ease-in-out cursor-pointer hover:bg-[var(--bg-body-secondary)]"
+          class="relative"
           id="profile"
         >
-          <span
-            class="size-7 rounded-full bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBB8-vI6Zaos_J9857nFdUFMWkcQQn769oBw&s)] bg-cover bg-center"
-          >
-          </span>
-          <span class="size-4">
-            <i class="fa-solid fa-angle-down"></i>
-          </span>
+          <div class="flex gap-2 items-center px-3 py-2 rounded-md duration-300 ease-in-out cursor-pointer hover:bg-[var(--bg-body-secondary)]">
+            <span
+              class="size-7 rounded-full bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBB8-vI6Zaos_J9857nFdUFMWkcQQn769oBw&s)] bg-cover bg-center"
+            >
+            </span>
+            <span class="size-4">
+              <i class="fa-solid fa-angle-down"></i>
+            </span>
+          </div>
 
           <!-- Dropdown -->
           <ul
@@ -95,21 +97,21 @@
             <li>
               <a
                 href="pages/login.html"
-                class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)] whitespace-nowrap"
+                class="hidden items-center p-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)] whitespace-nowrap"
                 ><i class="fa-solid fa-user"></i> <span>Profil</span></a
               >
             </li>
             <li>
               <a
                 href="pages/register.html"
-                class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)] whitespace-nowrap"
+                class="hidden items-center p-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)] whitespace-nowrap"
                 ><i class="fa-solid fa-star"></i> <span>Ubah Premium</span></a
               >
             </li>
             <li>
               <a
                 href="pages/register.html"
-                class="flex py-2 px-3 gap-2 duration-300 ease-in-out hover:text-[var(--text-primary)] whitespace-nowrap"
+                class="hidden items-center p-3 gap-2 duration-300 ease-in-out border-t-2 border-[var(--bg-body-secondary)] hover:text-[var(--text-primary)] whitespace-nowrap"
                 ><i class="fa-solid fa-arrow-right-from-bracket"></i>
                 <span>Keluar</span></a
               >
